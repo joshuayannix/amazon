@@ -19,20 +19,14 @@ function Home() {
          rating={4}
          image="https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
         />
-        <Product 
+         <Product 
           id='123123'
           title='Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)'
-          price={299.00}
+          price={299.99}
           rating={5}
           image='https://images-na.ssl-images-amazon.com/images/I/61JnrafZ7zL._AC_SL1457_.jpg'
-        />  
-        <Product 
-          id="49538094"
-          title="Everlast Pro Style Training Gloves"
-          price={20.99}
-          rating={3}
-          image="https://images-na.ssl-images-amazon.com/images/I/918ZBw7f6tL._AC_SL1500_.jpg"
-        />
+        /> 
+        
       </div>
       <div className="home__row">        
         <Product 
@@ -43,6 +37,13 @@ function Home() {
           image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
         />
         <Product 
+          id="49538094"
+          title="Everlast Pro Style Training Gloves"
+          price={20.99}
+          rating={3}
+          image="https://images-na.ssl-images-amazon.com/images/I/918ZBw7f6tL._AC_SL1500_.jpg"
+        />
+        <Product 
           id='123123'
           title='Echo Dot (3rd Gen) - Smart speaker with Alexa - Charcoal'
           price={39.99}
@@ -51,6 +52,7 @@ function Home() {
         />
       </div>
       <div className="home__row">
+        
         <Product 
           id='123123'
           title='New Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage, 2.6GHz Intel Core i7) - Space Gray'

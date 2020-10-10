@@ -1,0 +1,13 @@
+.checkoutProduct {
+  display: flex;
+}
+
+.checkoutProduct__image {
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
+}
+
+.checkoutProduct__info {
+
+}

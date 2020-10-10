@@ -14,41 +14,50 @@ function Home() {
       <div className="home__row">
         <Product 
          id="12321341"
-         title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
-         price={11.96}
-         rating={5}
-         image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+         title="Apple AirPods Pro"
+         price={219.99}
+         rating={4}
+         image="https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
         />
         <Product 
+          id='123123'
+          title='Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)'
+          price={299.00}
+          rating={5}
+          image='https://images-na.ssl-images-amazon.com/images/I/61JnrafZ7zL._AC_SL1457_.jpg'
+        />  
+        <Product 
           id="49538094"
-          title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
-          price={239.0}
-          rating={4}
-          image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+          title="Everlast Pro Style Training Gloves"
+          price={20.99}
+          rating={3}
+          image="https://images-na.ssl-images-amazon.com/images/I/918ZBw7f6tL._AC_SL1500_.jpg"
+        />
+      </div>
+      <div className="home__row">        
+        <Product 
+          id='123123'
+          title='Super Smash Bros. Ultimate - Nintendo Switch'
+          price={59.99}
+          rating={5}
+          image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
+        />
+        <Product 
+          id='123123'
+          title='Echo Dot (3rd Gen) - Smart speaker with Alexa - Charcoal'
+          price={39.99}
+          rating={5}
+          image='https://images-na.ssl-images-amazon.com/images/I/61IxWv3ecpL._AC_SL1000_.jpg'
         />
       </div>
       <div className="home__row">
         <Product 
           id='123123'
-          title='Super Smash Bros. Ultimate - Nintendo Switch'
-          price={59.99}
+          title='New Apple MacBook Pro (16-inch, 16GB RAM, 512GB Storage, 2.6GHz Intel Core i7) - Space Gray'
+          price={2099.99}
           rating={5}
-          image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
-        />
-        <Product 
-          id='123123'
-          title='Super Smash Bros. Ultimate - Nintendo Switch'
-          price={59.99}
-          rating={5}
-          image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
-        />
-        <Product 
-          id='123123'
-          title='Super Smash Bros. Ultimate - Nintendo Switch'
-          price={59.99}
-          rating={5}
-          image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
-        />
+          image='https://images-na.ssl-images-amazon.com/images/I/71pC69I3lzL._AC_SL1500_.jpg'
+        />     
       </div>
       
     </div>

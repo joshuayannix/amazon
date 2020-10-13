@@ -3,7 +3,6 @@ import { useStateValue } from './StateProvider';
 import './Checkout.css';
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
-import CurrencyFormat from 'react-currency-format';
 
 function Checkout() {
   const [{ basket }] = useStateValue();
@@ -19,14 +18,14 @@ function Checkout() {
         />
         {basket?.length === 0 ? (
           <div>
-            <h2>Your shopping cart is empty</h2>
+            <h2>Your Amazon Cart is empty</h2>
             <p>
               You have no items in you cart. To buy one or more items, click "Add to cart" next to the item.
             </p>
           </div>
         ) : (
           <div>
-            <h2 className='checkout__title'>Your shopping cart</h2>
+            <h2 className='checkout__title'>Shopping Cart</h2>
             {basket.map(item => (
               <CheckoutProduct 
                 id={item.id}

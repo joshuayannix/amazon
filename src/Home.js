@@ -19,16 +19,13 @@ function Home() {
          rating={4}
          image="https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
         />
-         <Product 
+        <Product 
           id='123123'
           title='Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)'
           price={299.99}
           rating={5}
           image='https://images-na.ssl-images-amazon.com/images/I/61JnrafZ7zL._AC_SL1457_.jpg'
         /> 
-        
-      </div>
-      <div className="home__row">        
         <Product 
           id='123123'
           title='Super Smash Bros. Ultimate - Nintendo Switch'
@@ -36,6 +33,10 @@ function Home() {
           rating={5}
           image='https://images-na.ssl-images-amazon.com/images/I/81aJ-R4E6gL._SL1500_.jpg'
         />
+        
+      </div>
+      <div className="home__row">        
+        
         <Product 
           id="49538094"
           title="Everlast Pro Style Training Gloves"

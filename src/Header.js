@@ -1,18 +1,28 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
 function Header() {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user, coins }] = useStateValue();
+  const [{ searchTerm }, dispatch] = useStateValue();
+  
+  
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
     }
   }
+  
+  const handleChange = e => {
+    //dispatch the search term to reducer
+    dispatch({
+      type:'UPDATE_SEARCH_TERM',
+      id: e.target.value
+    });
+  };
   return (
     <nav className='header'>
 
@@ -24,8 +34,14 @@ function Header() {
       </Link>
 
       <div className="header__search">
-        <input type="text" className="header__searchInput"/>
-        <SearchIcon className='header__searchIcon' />
+        <form action="">
+          <input 
+            type="text" className="header__searchInput"
+            placeholder='Search for coins'
+            onChange={handleChange}
+          />
+          
+        </form>        
       </div>   
 
       <div className="header__nav">

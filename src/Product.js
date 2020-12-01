@@ -9,7 +9,7 @@ function Product({ id, title, image, price, rating }) {
   const addToBasket = () => {
     dispatch({
       type: 'ADD_TO_BASKET',
-      item: { id, title, image, price, rating },      
+      item: { id, title, image, price, rating }      
     })
   };
 

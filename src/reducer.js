@@ -1,13 +1,15 @@
 export const initialState = {
   basket: [
-    {
-      id:"12321341",
-      title:"Apple AirPods Pro",
-      price:219.99,
-      rating:4,
-      image:"https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
-    }
+    // {
+    //   id:"12321341",
+    //   title:"Apple AirPods Pro",
+    //   price:219.99,
+    //   rating:4,
+    //   image:"https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
+    // }
   ],
+  coins: [],
+  searchTerm: 'josh',
   user: null,
 };
 
@@ -17,6 +19,13 @@ basket?.reduce((amount, item) => item.price + amount, 0);
 function reducer(state, action) {
   //console.log(action);
   switch(action.type) {
+    case 'RECEIVE_COINS_FROM_API' :
+      return {
+        ...state,
+        coins: action.id
+      }
+    case 'UPDATE_SEARCH_TERM':
+      return { ...state, searchTerm: action.id}
     case 'ADD_TO_BASKET':
       return { 
         ...state,

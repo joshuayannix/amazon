@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
 import background from './amazon-background.jpg';
 import './Home.css';
 import Product from './Product';
+import { useStateValue } from './StateProvider';
 
 function Home() {
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    axios
-      .get(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
-      )
-      .then(res => {
-        setCoins(res.data);
-        console.log(res.data);
-      })
-      .catch(error => console.log(error));
-  }, []);
-
-  const handleChange = e => {
-    setSearch(e.target.value);
-  };
+  const [{ coins, searchTerm }, dispatch] = useStateValue();
 
   const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
+    coin.name.toLowerCase().includes(searchTerm?.toLowerCase())
   );
-  //add OR statement to include the ticker sign as well
+  
+  console.log(filteredCoins)
 
   return (
     <div className='home'>

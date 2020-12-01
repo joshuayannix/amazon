@@ -1,13 +1,5 @@
 export const initialState = {
-  cart: [
-    // {
-    //   id:"12321341",
-    //   title:"Apple AirPods Pro",
-    //   price:219.99,
-    //   rating:4,
-    //   image:"https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg"
-    // }
-  ],
+  cart: [],
   coins: [],
   searchTerm: '',
   user: null,

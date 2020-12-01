@@ -51,7 +51,7 @@ function App() {
       <div className="app">
         <Switch>
           <Route path='/checkout'>
-            <Header />
+            <Header inCheckout={false}/>
             <Checkout />
           </Route>
           <Route path='/login'>    

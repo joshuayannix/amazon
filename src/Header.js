@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
-function Header() {
+function Header({ inCheckout }) {
   const [{ cart, user, coins }] = useStateValue();
   const [{ searchTerm }, dispatch] = useStateValue();
   
@@ -33,15 +33,21 @@ function Header() {
         />
       </Link>
 
-      <div className="header__search">
-        <form action="">
-          <input 
-            type="text" className="header__searchInput"
-            placeholder='Search for coins'
-            onChange={handleChange}
-          />
-        </form>        
+      {inCheckout == true ? (
+        <div className="header__search">
+          <form action="">
+            <input 
+              type="text" className="header__searchInput"
+              placeholder='Search for coins'
+              onChange={handleChange}
+            />
+          </form>        
       </div>   
+      ) : (
+        <div className='header__search'></div>
+      )  
+      }
+      
 
       <div className="header__nav">
         <Link to={!user && '/login'} className='header__link'>

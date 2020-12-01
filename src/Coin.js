@@ -9,7 +9,7 @@ function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
   const addToCart = () => {
     dispatch({
       type: 'ADD_TO_CART',
-      item: { name, image, price, }      
+      item: { name, image, price, symbol, priceChange }      
     })
   };
   console.log(priceChange)

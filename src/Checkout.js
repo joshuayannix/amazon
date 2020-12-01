@@ -5,7 +5,7 @@ import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
 
 function Checkout() {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
   return (
     <div className='checkout'>
@@ -17,7 +17,7 @@ function Checkout() {
           alt="checkout ad"
         />
 
-        {basket?.length === 0 ? (
+        {cart?.length === 0 ? (
           <div>
             <h2>Your Amazon Cart is empty</h2>
             <p>
@@ -28,7 +28,7 @@ function Checkout() {
           <div>
             <h3>Hello, {user?.email}</h3>
             <h2 className='checkout__title'>Shopping Cart</h2>
-            {basket.map(item => (
+            {cart.map(item => (
               <CheckoutProduct 
                 id={item.id}
                 title={item.title}
@@ -40,7 +40,7 @@ function Checkout() {
           </div>
         )}        
     </div>
-    {basket.length > 0 && (
+    {cart.length > 0 && (
       <div className='checkout__right'>
         <Subtotal />
       </div>

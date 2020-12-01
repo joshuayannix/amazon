@@ -46,11 +46,6 @@ function App() {
       .catch(error => console.log(error));
   }, []);
 
-  // const filteredCoins = coins.filter(coin =>
-  //   coin.name.toLowerCase().includes(search.toLowerCase())
-  // );
-  //add OR statement to include the ticker sign as well
-
   return (
     <Router>
       <div className="app">

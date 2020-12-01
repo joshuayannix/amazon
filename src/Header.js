@@ -6,7 +6,7 @@ import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
 function Header() {
-  const [{ basket, user, coins }] = useStateValue();
+  const [{ cart, user, coins }] = useStateValue();
   const [{ searchTerm }, dispatch] = useStateValue();
   
   
@@ -40,7 +40,6 @@ function Header() {
             placeholder='Search for coins'
             onChange={handleChange}
           />
-          
         </form>        
       </div>   
 
@@ -67,9 +66,9 @@ function Header() {
           </div>
         </Link>
         <Link to='/checkout' className='header__link'>
-          <div className="header__optionBasket">
+          <div className="header__optionCart">
             <ShoppingCartIcon />
-          <span className='header__optionLineTwo header__basketCount'>{basket?.length}</span>
+          <span className='header__optionLineTwo header__cartCount'>{cart?.length}</span>
           </div>
         </Link>
       </div>   

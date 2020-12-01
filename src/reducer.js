@@ -1,5 +1,5 @@
 export const initialState = {
-  basket: [
+  cart: [
     // {
     //   id:"12321341",
     //   title:"Apple AirPods Pro",
@@ -9,12 +9,12 @@ export const initialState = {
     // }
   ],
   coins: [],
-  searchTerm: 'josh',
+  searchTerm: '',
   user: null,
 };
 
-export const getBasketTotal = (basket) => 
-basket?.reduce((amount, item) => item.price + amount, 0);
+export const getCartTotal = (cart) => 
+cart?.reduce((amount, item) => item.price + amount, 0);
 
 function reducer(state, action) {
   //console.log(action);
@@ -26,23 +26,23 @@ function reducer(state, action) {
       }
     case 'UPDATE_SEARCH_TERM':
       return { ...state, searchTerm: action.id}
-    case 'ADD_TO_BASKET':
+    case 'ADD_TO_CART':
       return { 
         ...state,
-        basket: [...state.basket, action.item]  
+        cart: [...state.cart, action.item]  
       }      
-    case 'REMOVE_FROM_BASKET':
-      let newBasket = [...state.basket];
+    case 'REMOVE_FROM_CART':
+      let newCart = [...state.cart];
 
-      const index = state.basket.findIndex((basketItem) => basketItem.id === action.id);
+      const index = state.cart.findIndex((cartItem) => cartItem.id === action.id);
 
       if(index >= 0) {
-        newBasket.splice(index, 1);
+        newCart.splice(index, 1);
       } else {
         console.warn(`Cant remove product id: ${action.id}`)
       };
 
-      return { ...state, basket: newBasket };
+      return { ...state, cart: newCart };
     
       case 'SET_USER':
         return {

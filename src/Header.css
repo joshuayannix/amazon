@@ -65,6 +65,11 @@
   width: 100%;
 }
 
+.header__searchInput:focus {
+  outline-color: rgb(248, 147, 14);
+  outline-width: thick;
+}
+
 .header__search > form {
   width: 92%;
 }

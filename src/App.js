@@ -51,14 +51,14 @@ function App() {
       <div className="app">
         <Switch>
           <Route path='/checkout'>
-            <Header inCheckout={false}/>
+            <Header showSearchBar={false}/>
             <Checkout />
           </Route>
           <Route path='/login'>    
             <Login />       
           </Route>
           <Route path='/'>
-            <Header />
+            <Header showSearchBar={true}/>
             <Home />
           </Route>
         </Switch>

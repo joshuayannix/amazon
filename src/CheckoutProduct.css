@@ -17,10 +17,11 @@
 .checkoutProduct__title {
   font-size: 17px;
   font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.checkoutProduct__rating {
-  display: flex;
+.checkoutProduct__price {
+  margin-bottom: 6px;
 }
 
 .checkoutProduct__info > button {

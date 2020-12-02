@@ -26,6 +26,11 @@ function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
+        {priceChange < 0 ? (
+            <p className='coin__percent red'>{priceChange?.toFixed(2)}%</p>
+          ) : (
+            <p className='coin__percent green'>{priceChange?.toFixed(2)}%</p>
+        )}
 
         <button 
           onClick={removeFromCart}

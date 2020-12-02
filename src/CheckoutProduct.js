@@ -1,15 +1,16 @@
 import React from 'react';
+
 import './CheckoutProduct.css';
 import { useStateValue } from './StateProvider';
 
-function CheckoutProduct({ name, image, price, symbol, priceChange }) {
+function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
 
-  const [{ cart }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   
   const removeFromCart = () => {
     dispatch({
       type:'REMOVE_FROM_CART',
-      id: name,
+      id: uuid,
     });
   }
 
@@ -30,7 +31,7 @@ function CheckoutProduct({ name, image, price, symbol, priceChange }) {
           onClick={removeFromCart}
           className='checkoutProduct__button'
         >
-          Remove from cart
+          Remove from Cart
         </button>
       </div>
 

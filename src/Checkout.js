@@ -31,6 +31,7 @@ function Checkout() {
             {cart.map(item => (
               <CheckoutProduct 
                 id={item.id}
+                uuid={item.uuid}
                 name={item.name}
                 image={item.image}
                 price={item.price}

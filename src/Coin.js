@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuid } from 'uuid';
 import './Coin.css'
 import { useStateValue } from './StateProvider';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -10,10 +11,9 @@ function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
   const addToCart = () => {
     dispatch({
       type: 'ADD_TO_CART',
-      item: { name, image, price, symbol, priceChange }      
+      item: { name, image, price, symbol, priceChange, uuid:uuid() }      
     })
   };
-  console.log(priceChange)
 
   return (
     <div className='coin'>

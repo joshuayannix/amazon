@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import bitcoin_prime_logo from './bitcoin_prime_logo.png'
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useStateValue } from './StateProvider';
@@ -27,7 +28,7 @@ function Header({ showSearchBar }) {
       <Link to='/'>      
         <img  
           className='header__logo' 
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo"
+          src={bitcoin_prime_logo} alt="amazon logo"
         />
       </Link>
 

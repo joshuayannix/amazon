@@ -1,15 +1,16 @@
 import React from 'react';
 import './CheckoutProduct.css';
 import { useDispatch } from 'react-redux';
+import { removeFromCart } from './features/cartSlice';
 
 function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
 
   const dispatch = useDispatch();
-  const removeFromCart = () => {
-    dispatch({
-      type:'REMOVE_FROM_CART',
-      id: uuid,
-    });
+  
+  const removeFromCartCheckout = () => {    
+    dispatch(removeFromCart({
+      id: uuid
+    }))
   }
 
   return (
@@ -31,7 +32,7 @@ function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
         )}
 
         <button 
-          onClick={removeFromCart}
+          onClick={removeFromCartCheckout}
           className='checkoutProduct__button'
         >
           Remove from Cart

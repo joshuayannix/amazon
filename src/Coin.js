@@ -3,14 +3,14 @@ import { v4 as uuid } from 'uuid';
 import './Coin.css'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { useDispatch } from 'react-redux';
+import { addToCart } from './features/cartSlice';
 
 function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
   const dispatch = useDispatch();  
-  const addToCart = () => {
-    dispatch({
-      type: 'ADD_TO_CART',
+  const addToCartCoin = () => {    
+    dispatch(addToCart({
       item: { name, image, price, symbol, priceChange, uuid:uuid() }      
-    })
+    }))
   };
 
   return (
@@ -36,7 +36,7 @@ function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
           <p className='coin__marketcap'>
             Mkt Cap: ${marketcap.toLocaleString()}
           </p>
-          <button onClick={addToCart}>
+          <button onClick={addToCartCoin}>
             <AddShoppingCartIcon className='AddShoppingCartIcon'/>
             <span className='add_to_cart_text'>Add to Cart</span>
             

@@ -3,16 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 export const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    cart: []
+    cartRedux: []
   },
   reducers: {
     addToCart: (state, action) => {
-      state.cart = [...state.cart, action.payload.item];
+      state.cartRedux = [...state.cartRedux, action.payload.item];
     },
     removeFromCart: (state, action) => {
-      let newCart = [...state.cart];
+      let newCart = [...state.cartRedux];
 
-      const index = state.cart.findIndex((cartItem) => cartItem.uuid === action.payload.id);
+      const index = state.cartRedux.findIndex((cartItem) => cartItem.uuid === action.payload.id);
 
       if(index >= 0) {
         newCart.splice(index, 1);
@@ -20,7 +20,7 @@ export const cartSlice = createSlice({
         console.warn(`Can't remove product id: ${action.payload.id}`)
       };
 
-      state.cart = newCart;
+      state.cartRedux = newCart;
 
     }
   }
@@ -28,6 +28,6 @@ export const cartSlice = createSlice({
 
 export const { addToCart, removeFromCart } = cartSlice.actions;
 
-export const cart = state => state.cart.cart;
+export const cartRedux = state => state.cart.cartRedux;
 
 export default cartSlice.reducer;

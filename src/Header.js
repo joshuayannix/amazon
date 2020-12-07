@@ -3,12 +3,17 @@ import './Header.css';
 import bitcoin_prime_logo from './bitcoin_prime_logo.png'
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateSearchTerm } from './features/appSlice';
+import { selectUser } from './features/userSlice';
+import { cartRedux } from './features/cartSlice';
 
 function Header({ showSearchBar }) {
-  const [{ cart, user }, dispatch] = useStateValue();
-    
+  const dispatch = useDispatch();
+  const cart = useSelector(cartRedux)
+  const user = useSelector(selectUser);
+
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
@@ -17,10 +22,9 @@ function Header({ showSearchBar }) {
   
   const handleChange = e => {
     //dispatch the search term to reducer
-    dispatch({
-      type:'UPDATE_SEARCH_TERM',
+    dispatch(updateSearchTerm({
       id: e.target.value
-    });
+    }));
   };
   return (
     <nav className='header'>

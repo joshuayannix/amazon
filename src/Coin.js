@@ -1,13 +1,11 @@
 import React from 'react'
 import { v4 as uuid } from 'uuid';
 import './Coin.css'
-import { useStateValue } from './StateProvider';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { useDispatch } from 'react-redux';
 
 function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
-
-  const [, dispatch ] = useStateValue();
-  
+  const dispatch = useDispatch();  
   const addToCart = () => {
     dispatch({
       type: 'ADD_TO_CART',

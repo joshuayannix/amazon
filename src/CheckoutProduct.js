@@ -1,12 +1,10 @@
 import React from 'react';
-
 import './CheckoutProduct.css';
-import { useStateValue } from './StateProvider';
+import { useDispatch } from 'react-redux';
 
 function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
 
-  const [{}, dispatch] = useStateValue();
-  
+  const dispatch = useDispatch();
   const removeFromCart = () => {
     dispatch({
       type:'REMOVE_FROM_CART',

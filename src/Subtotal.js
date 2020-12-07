@@ -1,12 +1,13 @@
 import React from 'react';
 import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from './StateProvider';
 import { getCartTotal } from './reducer';
+import { cartRedux } from './features/cartSlice';
+import { useSelector } from 'react-redux';
 
 function Subtotal() {
-  const [{ cart }] = useStateValue();
-
+  const cart = useSelector(cartRedux)
+  
   return (
     <div className='subtotal'>
 

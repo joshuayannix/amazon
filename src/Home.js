@@ -1,11 +1,12 @@
 import React from 'react';
 import './Home.css';
 import Coin from './Coin';
-import { useStateValue } from './StateProvider';
+import { coinsRedux, searchTermRedux} from './features/appSlice';
+import { useSelector } from 'react-redux';
 
 function Home() {
-
-  const [{ coins, searchTerm }, dispatch] = useStateValue();
+  const coins = useSelector(coinsRedux);
+  const searchTerm = useSelector(searchTermRedux);
 
   const filteredCoins = coins.filter(coin =>
     coin.name.toLowerCase().includes(searchTerm?.toLowerCase()) || 

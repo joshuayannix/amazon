@@ -3,23 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 export const appSlice = createSlice({
   name: 'app',
   initialState: {
-    coins: [],
-    searchTerm: ''
+    coinsRedux: [],
+    searchTermRedux: ''
   },
   reducers: {
     receiveCoinsFromAPI: (state, action) => {
-      state.coins = action.payload.id;
+      state.coinsRedux = action.payload.id;
     },
     updateSearchTerm: (state, action) => {
-      state.searchTerm = action.payload.searchTerm;
+      state.searchTermRedux = action.payload.searchTerm;
     }
   }
 })
 
 export const { receiveCoinsFromAPI, updateSearchTerm } = appSlice.actions;
 
-export const coins = state => state.app.coins;
+export const coinsRedux = state => state.app.coinsRedux;
 
-export const searchTerm = state => state.app.searchTerm;
+export const searchTermRedux = state => state.app.searchTermRedux;
 
 export default appSlice.reducer;

@@ -11,7 +11,7 @@ export const appSlice = createSlice({
       state.coinsRedux = action.payload.id;
     },
     updateSearchTerm: (state, action) => {
-      state.searchTermRedux = action.payload.searchTerm;
+      state.searchTermRedux = action.payload.text;
     }
   }
 })

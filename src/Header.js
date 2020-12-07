@@ -23,7 +23,7 @@ function Header({ showSearchBar }) {
   const handleChange = e => {
     //dispatch the search term to reducer
     dispatch(updateSearchTerm({
-      id: e.target.value
+      text: e.target.value
     }));
   };
   return (

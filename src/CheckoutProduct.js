@@ -23,7 +23,7 @@ function CheckoutProduct({ name, uuid, image, price, symbol, priceChange }) {
 
         <p className="checkoutProduct__price">
           <small>$</small>
-          <strong>{price}</strong>
+          <strong>{price.toLocaleString()}</strong>
         </p>
         {priceChange < 0 ? (
             <p className='coin__percent red'>{priceChange?.toFixed(2)}%</p>

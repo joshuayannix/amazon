@@ -24,7 +24,7 @@ function Coin({ name, price, symbol, marketcap, volume, image, priceChange }) {
         </section>
 
         <section className='coin__data'>
-          <p className='coin__price'>${price}</p>
+          <p className='coin__price'>${price.toLocaleString()}</p>
           <p className='coin__volume'>${volume.toLocaleString()}</p>
 
           {priceChange < 0 ? (

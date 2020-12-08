@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Login.css'
 import { Link, useHistory } from 'react-router-dom';
 import { auth, provider } from './firebase';
 
 function Login() {
   const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const signIn = e => {
     e.preventDefault();

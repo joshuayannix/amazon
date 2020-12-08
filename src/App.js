@@ -29,7 +29,7 @@ function App() {
       }
 
     })
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     axios
@@ -44,7 +44,7 @@ function App() {
         console.log(res.data);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>

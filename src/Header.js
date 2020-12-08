@@ -36,7 +36,7 @@ function Header({ showSearchBar }) {
         />
       </Link>
 
-      {showSearchBar == true ? (
+      {showSearchBar === true ? (
         <div className="header__search">
           <form action="">
             <input 

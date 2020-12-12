@@ -3,9 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid red;
   height: 100vh;
-
 }
 .login__logo {
   margin-top: 20px;

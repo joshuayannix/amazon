@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css'
 import { Link, useHistory } from 'react-router-dom';
 import { auth, provider } from './firebase';
+import bitcoin_prime_logo_white from './bitcoin_prime_logo_white.png'
 
 function Login() {
   const history = useHistory();
@@ -20,7 +21,8 @@ function Login() {
     <div className='login'>
       <Link to ='/'>
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="amazon logo"
+          src={bitcoin_prime_logo_white}
+          alt="bitcoin amazon logo"
           className='login__logo'
         />
       </Link>

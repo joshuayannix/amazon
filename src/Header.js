@@ -32,7 +32,7 @@ function Header({ showSearchBar }) {
       <Link to='/'>      
         <img  
           className='header__logo' 
-          src={bitcoin_prime_logo} alt="amazon logo"
+          src={bitcoin_prime_logo} alt="bitcoin amazon logo"
         />
       </Link>
 
